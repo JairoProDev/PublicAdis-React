@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import logo from './images/logo.png';
 
 function MainComponent() {
-    const anunciosList = useRef(null);
     const titleRef = useRef(null);
     const descriptionRef = useRef(null);
 
@@ -42,8 +41,7 @@ function MainComponent() {
     }
 
     const agregarAnuncioAlPrincipio = (anuncio) => {
-        const newAdCard = createAdCard(anuncio);
-        anunciosList.current.insertBefore(newAdCard, anunciosList.current.firstChild);
+        setAnuncios(prevAnuncios => [anuncio, ...prevAnuncios]);
     }
 
     const handleSubmit = async (e) => {
@@ -62,7 +60,7 @@ function MainComponent() {
                 body: JSON.stringify(newAd),
             });
 
-            if (respuesta.ok) {
+            if (respuesta.ok) { 
                 const respuestaJson = await respuesta.json();
                 const anuncio = respuestaJson.anuncio;
                 agregarAnuncioAlPrincipio(anuncio);
@@ -239,16 +237,16 @@ function MainComponent() {
                     </div>
 
                     <div className="form-column" id="ad-form">
-                        <form id="adForm" action="/api/anuncios" method="POST">
-                            <fieldset>
-                                <legend>Información del anuncio</legend>
-                                <label htmlFor="title">Título:</label>
-                                <input type="text" id="title" name="title" required />
-                                <label htmlFor="description">Descripción:</label>
-                                <textarea id="description" name="description" required></textarea>
-                            </fieldset>
-                            <button type="submit">Publicar Anuncio</button>
-                        </form>
+                    <form id="adForm" action="/api/anuncios" method="POST" onSubmit={handleSubmit}>
+                        <fieldset>
+                            <legend>Información del anuncio</legend>
+                            <label htmlFor="title">Título:</label>
+                            <input type="text" id="title" name="title" required ref={titleRef} />
+                            <label htmlFor="description">Descripción:</label>
+                            <textarea id="description" name="description" required ref={descriptionRef}></textarea>
+                        </fieldset>
+                <button type="submit">Publicar Anuncio</button>
+            </form>
                     </div>
                 </div>
             </div>
