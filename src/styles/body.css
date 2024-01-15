@@ -1,0 +1,5 @@
+body {
+    height: 100vh;
+    width: 100%;
+    background: var(--background-color) url("../images/hero-bg.jpg") center/cover;
+}

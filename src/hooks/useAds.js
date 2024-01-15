@@ -26,7 +26,7 @@ function useAds() {
     }, [getAds]);
 
     const agregarAnuncioAlPrincipio = (anuncio) => {
-        setAnuncios(prevAnuncios => [anuncio, ...prevAnuncios]);
+        setAnuncios(prevAnuncios => [...prevAnuncios, anuncio]);
     }
 
     return { anuncios: reversedAnuncios, agregarAnuncioAlPrincipio, error };

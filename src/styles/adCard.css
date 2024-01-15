@@ -1,0 +1,65 @@
+.anuncio-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: -20px 20px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.anuncio-card:hover {
+    box-shadow: -20px 20px 8px rgba(0, 0, 0, 0.2);
+}
+
+.anuncio-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.anuncio-titulo {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+    /* Añadido para mejorar la legibilidad */
+    line-height: 1.4;
+}
+
+.anuncio-descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    flex-grow: 1;
+    /* Añadido para mejorar la legibilidad */
+    line-height: 1.6;
+}
+
+.anuncio-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.anuncio-buttons button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    /* Añadido para mejorar la interactividad */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.anuncio-buttons button:hover {
+    background-color: #0056b3;
+    /* Añadido para mejorar la interactividad */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
