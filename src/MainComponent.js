@@ -1,6 +1,6 @@
 import './MainComponent.css';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import logo from './images/logo.png';
 
 function MainComponent() {
@@ -8,12 +8,11 @@ function MainComponent() {
     const titleRef = useRef(null);
     const descriptionRef = useRef(null);
 
-    const showAds = useCallback((anuncios) => {
-        anunciosList.current.innerHTML = "";
-        anuncios.forEach((anuncio) => {
-            const anuncioCard = createAdCard(anuncio);
-            anunciosList.current.appendChild(anuncioCard);
-        });
+
+    const [anuncios, setAnuncios] = useState([]);
+
+    const showAds = useCallback((anunciosData) => {
+        setAnuncios(anunciosData);
     }, []);
 
     const getAds = useCallback(async () => {
@@ -34,13 +33,12 @@ function MainComponent() {
 
 
     const createAdCard = (anuncio) => {
-        const li = document.createElement("li");
-        li.className = "anuncio-card";
-        li.innerHTML = `
-            <h3 class="title">${anuncio.title || anuncio.titulo || anuncio.adTitle}</h3>
-            <p class="description">${anuncio.description || anuncio.descripcion || anuncio.adDescription}</p>
-        `;
-        return li;
+        return (
+            <li className="anuncio-card">
+                <h3 className="title">{anuncio.title || anuncio.titulo || anuncio.adTitle}</h3>
+                <p className="description">{anuncio.description || anuncio.descripcion || anuncio.adDescription}</p>
+            </li>
+        );
     }
 
     const agregarAnuncioAlPrincipio = (anuncio) => {
@@ -235,7 +233,9 @@ function MainComponent() {
                     </aside>
 
                     <div className="anuncios-column">
-                        <ul id="anuncios-list" ref={anunciosList}></ul>
+                        <ul id="anuncios-list">
+                        {anuncios.map(anuncio => createAdCard(anuncio))}
+                        </ul>
                     </div>
 
                     <div className="form-column" id="ad-form">
