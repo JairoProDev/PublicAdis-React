@@ -9,4 +9,4 @@ function AdCard({ anuncio }) {
     );
 }
 
-export default AdCard;
+export default React.memo(AdCard);
