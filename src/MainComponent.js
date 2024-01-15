@@ -1,4 +1,3 @@
-import './MainComponent.css';
 
 import './styles/root.css';
 import './styles/reset.css';
@@ -10,6 +9,7 @@ import './styles/responsive.css';
 import './styles/editForm.css';
 import './styles/navbar.css';
 import './styles/mainContent.css';
+import './styles/PublishButton.css';
 // import './styles/adsList.css';
 import './styles/adCard.css';
 import './styles/sidebar.css';
