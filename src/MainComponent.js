@@ -1,13 +1,9 @@
 import './MainComponent.css';
-import { Link } from 'react-router-dom';
-import React, { useEffect, useRef, useCallback, useState } from 'react';
-import logo from './images/logo.png';
+import React, { useEffect, useCallback, useState } from 'react';
 import AdCard from './components/AdCard';
 import Sidebar from './components/Sidebar';
+import AdForm from './components/AdForm';
 function MainComponent() {
-    const titleRef = useRef(null);
-    const descriptionRef = useRef(null);
-
 
     const [anuncios, setAnuncios] = useState([]);
 
@@ -34,35 +30,7 @@ function MainComponent() {
         setAnuncios(prevAnuncios => [anuncio, ...prevAnuncios]);
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newAd = {
-            title: titleRef.current.value,
-            description: descriptionRef.current.value,
-        };
-
-        try {
-            const respuesta = await fetch("/api/anuncios", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newAd),
-            });
-
-            if (respuesta.ok) { 
-                const respuestaJson = await respuesta.json();
-                const anuncio = respuestaJson.anuncio;
-                agregarAnuncioAlPrincipio(anuncio);
-                titleRef.current.value = '';
-                descriptionRef.current.value = '';
-            } else {
-                console.error("Error al crear el anuncio");
-            }
-        } catch (error) {
-            console.error("Error de red:", error);
-        }
-    }
+   
     return (
         <div>
             <div className="container">
@@ -74,19 +42,7 @@ function MainComponent() {
                             {anuncios.map(anuncio => <AdCard key={anuncio._id} anuncio={anuncio} />)}
                         </ul>
                     </div>
-
-                    <div className="form-column" id="ad-form">
-                    <form id="adForm" action="/api/anuncios" method="POST" onSubmit={handleSubmit}>
-                        <fieldset>
-                            <legend>Información del anuncio</legend>
-                            <label htmlFor="title">Título:</label>
-                            <input type="text" id="title" name="title" required ref={titleRef} />
-                            <label htmlFor="description">Descripción:</label>
-                            <textarea id="description" name="description" required ref={descriptionRef}></textarea>
-                        </fieldset>
-                <button type="submit">Publicar Anuncio</button>
-            </form>
-                    </div>
+                    <AdForm agregarAnuncioAlPrincipio={agregarAnuncioAlPrincipio} />
                 </div>
             </div>
         </div>
