@@ -31,7 +31,7 @@ function MainComponent() {
 
 
 
-    const createAdCard = (anuncio) => {
+    function AdCard({ anuncio }) {
         return (
             <li className="anuncio-card">
                 <h3 className="title">{anuncio.title || anuncio.titulo || anuncio.adTitle}</h3>
@@ -232,7 +232,7 @@ function MainComponent() {
 
                     <div className="anuncios-column">
                         <ul id="anuncios-list">
-                        {anuncios.map(anuncio => createAdCard(anuncio))}
+                            {anuncios.map(anuncio => <AdCard key={anuncio._id} anuncio={anuncio} />)}
                         </ul>
                     </div>
 
