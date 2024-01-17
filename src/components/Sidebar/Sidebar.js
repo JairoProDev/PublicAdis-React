@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.png';
-
+import './sidebar.css';
 function Sidebar() {
     return (
 <aside className="sidebar">
-                        <div className="logo">
-                        <img src={logo} alt="logo" />
-                            <h2>PublicAdis: Anunc<span className="blue-text-ia">IA</span></h2>
-                        </div>
+
                     <ul className="category-list">
                     
                     <h4>Servicios</h4>

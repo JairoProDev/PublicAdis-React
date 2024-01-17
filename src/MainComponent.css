@@ -1,0 +1,29 @@
+/* MainComponent.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+}
+
+.header {
+    /* Estilos para tu header aquí */
+}
+
+.sidebar {
+    position: sticky;
+    top: 0; /* Esto hará que el sidebar se quede en la parte superior de la pantalla al desplazarse */
+    height: calc(100vh - 60px); /* Ajusta el 60px al tamaño de tu header y navbar */
+    overflow-y: auto; /* Permite que el contenido del sidebar se desplace si es demasiado largo */
+}
+
+.main-content {
+    flex-grow: 1; /* Esto hará que el contenido principal ocupe todo el espacio restante */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Crea un grid responsivo con columnas de al menos 200px */
+    gap: 10px; /* Espacio entre los elementos del grid */
+}
+
+.navbar {
+    /* Estilos para tu navbar aquí */
+}

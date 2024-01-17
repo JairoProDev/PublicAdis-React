@@ -1,9 +1,9 @@
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 62px;
     left: 0;
     bottom: 0;
-    width: 56px;
+    width: 36px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -15,6 +15,10 @@
     padding-bottom: 30px;
     /* Añadido para mejorar la interactividad */
     overflow-x: hidden;
+  }
+
+  .sidebar.header-hidden {
+    top: 0; /* Cuando el header está oculto */
   }
 
   .sidebar:hover {
