@@ -3,6 +3,8 @@ import './styles/root.css';
 import './styles/reset.css';
 import './styles/body.css';
 
+import './MainComponent.css';
+
 import './styles/navigation.css';
 import './styles/form.css';
 import './styles/responsive.css';
