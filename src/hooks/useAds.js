@@ -7,7 +7,12 @@ function useAds() {
     const reversedAnuncios = useMemo(() => [...anuncios].reverse(), [anuncios]);
 
     const showAds = useCallback((anunciosData) => {
-        setAnuncios(anunciosData);
+        if (Array.isArray(anunciosData)) {
+            setAnuncios(anunciosData);
+        } else {
+            console.error('anunciosData is not an array:', anunciosData);
+            setError('Error: Data received is not an array');
+        }
     }, []);
 
     const getAds = useCallback(async () => {

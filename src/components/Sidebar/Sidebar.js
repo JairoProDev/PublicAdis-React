@@ -5,7 +5,7 @@ function Sidebar() {
     return (
 <aside className="sidebar">
 
-                    <ul className="category-list">
+                <ul className="category-list">
                     
                     <h4>Servicios</h4>
                     <ul className="enlaces">
@@ -149,8 +149,8 @@ function Sidebar() {
                                 <Link to="#">Publicar Anuncio</Link>
                             </button>
                         </li>
-                        </ul>
                     </ul>
+                </ul>
                     </aside>
     );
 }

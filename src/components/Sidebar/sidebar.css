@@ -9,58 +9,23 @@
     align-items: center;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(17px);
+    backdrop-filter: blur(8px);
     border-right: 1px solid rgba(255, 255, 255, 0.7);
     transition: width 0.3s ease;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     /* Añadido para mejorar la interactividad */
     overflow-x: hidden;
-  }
-
-  .sidebar.header-hidden {
-    top: 0; /* Cuando el header está oculto */
   }
 
   .sidebar:hover {
     width: 220px;
   }
 
-  
-  
-  .sidebar .logo {
-    color: #000;
-    display: flex;
-    align-items: center;
-    padding: 10px 2px 5px 5px;
-    /* Añadido para mejorar la transición */
-    transition: padding 0.3s ease;
-  }
-  
-  .logo img {
-    width: 50px;
-    border-radius: 0%;
-  }
-  
-  .logo h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-left: 15px;
-    display: none;
-    /* Añadido para mejorar la legibilidad */
-    line-height: 1.4;
-  }
-  
-  .sidebar:hover .logo h2 {
-    display: block;
-  }
-
   .sidebar .category-list {
     list-style: none;
     margin-top: 5px;
     overflow-y: auto;
-    scrollbar-width: none;
-    height: calc(100% - 140px);
-    /* Añadido para mejorar la interactividad */
+
     padding: 0 0px;
   }
   
@@ -85,6 +50,8 @@
     font-weight: 500;
     display: none;
     margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
     /* Añadido para mejorar la legibilidad */
     line-height: 1.2;
   }
