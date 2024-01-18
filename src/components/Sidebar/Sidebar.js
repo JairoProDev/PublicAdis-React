@@ -127,6 +127,27 @@ function Sidebar() {
                         </li>
                     </ul>
 
+                    <h4>Turismo</h4>
+                    <ul className="enlaces">
+                        <li>
+                            <span className="material-symbols-outlined">flight</span>
+                            <Link to="#">Vuelos</Link>
+                        </li>
+                        <li>
+                            <span className="material-symbols-outlined">hotel</span>
+                            <Link to="#">Hoteles</Link>
+                        </li>
+                        <li>
+                            <span className="material-symbols-outlined">local_activity</span>
+                            <Link to="#">Agencias de viaje</Link>
+                        </li>
+                        <li>
+                            <span className="material-symbols-outlined">restaurant</span>
+                            <Link to="#">Restaurantes</Link>
+                        </li>
+
+                    </ul>
+
                     <h4>Varios</h4>
                     <ul className="enlaces">
                         <li>
