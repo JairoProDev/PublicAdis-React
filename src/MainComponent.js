@@ -11,12 +11,12 @@ import "./styles/editForm.css";
 import "./styles/navbar.css";
 import "./styles/mainContent.css";
 import "./styles/PublishButton.css";
-import "./styles/adCard.css";
 
 import React, { Fragment } from "react";
 import AdList from "./components/AdList/AdList";
 import Sidebar from "./components/Sidebar/Sidebar";
 import AdForm from "./components/AdForm/AdForm";
+import AdCard from "./components/AdCard/AdCard";
 // import NavBar from './components/NavBar';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import Home from './pages/Home';

@@ -1,4 +1,5 @@
 import React from 'react';
+import './adCard.css';  
 
 function AdCard({ anuncio }) {
     return (

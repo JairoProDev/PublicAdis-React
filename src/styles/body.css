@@ -18,7 +18,9 @@ body {
         radial-gradient(circle at 80% 50%, #333333, #111111);
     background-blend-mode: screen;
 } */
+/* body{
 
-/* background: var(--background-color) url("../images/hero-bg.jpg") center/cover; */
+    background: var(--background-color) url("../images/hero-bg.jpg") center/cover;
+} */
 
 

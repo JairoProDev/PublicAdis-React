@@ -1,5 +1,5 @@
 import React from "react";
-import AdCard from "../AdCard";
+import AdCard from "../AdCard/AdCard";
 // import "./adList.css";
 
 function AdList({ anuncios }) {
