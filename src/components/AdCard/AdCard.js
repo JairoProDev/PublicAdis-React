@@ -4,42 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
-const CallButton = ({ phone }) => (
-    <a href={`tel:${phone}`} className="anuncio-button anuncio-button-details">
-        <FontAwesomeIcon icon={faPhone} />
-    </a>
-);
-
-const WhatsappButton = ({ phone }) => {
-    const whatsappMessage = "Hola, vi su anuncio en PublicAdis.com y me interesa, podría proporcionarme más información por favor?";
-    const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
-
-    return (
-        <a href={whatsappLink} className="anuncio-button anuncio-button-contact">
-            <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
-    );
-};
-
 function AdCard({ anuncio }) {
     const { title, description, amount, location, phone } = anuncio;
 
     return (
-        <div className="anuncio-card">
-            <div className="anuncio-content">
-                <h3 className="anuncio-titulo">{title}</h3>
-                <p className="anuncio-descripcion">{description}</p>
-                <div className="anuncio-details">
-                    <p className="anuncio-price">{amount}</p>
-                    <p className="anuncio-location">{location}</p>
+        <div className="ad-card">
+            <div className="ad-card__content">
+                <h3 className="ad-card__title">{title}</h3>
+                <p className="ad-card__description">{description}</p>
+                <div className="ad-card__details">
+                    <p className="ad-card__price">{amount}</p>
+                    <p className="ad-card__location">{location}</p>
                 </div>
-                <div className="anuncio-buttons">
-                    <CallButton phone={phone} />
-                    <WhatsappButton phone={phone} />
+                <div className="ad-card__buttons">
+                    <a href={`tel:${phone}`} className="ad-card__button ad-card__button--details" aria-label="Call">
+                        <FontAwesomeIcon icon={faPhone} />
+                    </a>
+                    <a href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola, vi su anuncio en PublicAdis.com y me interesa, podría proporcionarme más información por favor?")}`} className="ad-card__button ad-card__button--contact" aria-label="Contact on WhatsApp">
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                    </a>
                 </div>
             </div>
         </div>
     );
 }
 
-export default React.memo(AdCard);
+export default AdCard;
