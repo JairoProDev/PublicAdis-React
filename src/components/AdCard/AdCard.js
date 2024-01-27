@@ -21,7 +21,7 @@ function AdCard({ anuncio }) {
                         <FontAwesomeIcon icon={faPhone} />
                     </a>
                     <a href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola, vi su anuncio en PublicAdis.com y me interesa, podría proporcionarme más información por favor?")}`} className="ad-card__button ad-card__button--contact" aria-label="Contact on WhatsApp">
-                        <FontAwesomeIcon icon={faWhatsapp} />
+                        <FontAwesomeIcon icon={faWhatsapp} size='2x' />
                     </a>
                 </div>
             </div>
