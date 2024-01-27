@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-
+import './adForm.css';
 
 function AdForm({ agregarAnuncioAlPrincipio }) {
     const titleRef = useRef();
@@ -9,6 +9,15 @@ function AdForm({ agregarAnuncioAlPrincipio }) {
     const locationRef = useRef();
     const phoneRef = useRef();
     const emailRef = useRef();
+
+    const clearForm = () => {
+        titleRef.current.value = '';
+        descriptionRef.current.value = '';
+        amountRef.current.value = '';
+        locationRef.current.value = '';
+        phoneRef.current.value = '';
+        emailRef.current.value = '';
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -31,18 +40,13 @@ function AdForm({ agregarAnuncioAlPrincipio }) {
                 const respuestaJson = await respuesta.json();
                 const anuncio = respuestaJson.anuncio;
                 agregarAnuncioAlPrincipio(anuncio);
-                titleRef.current.value = '';
-                descriptionRef.current.value = '';
-                amountRef.current.value = '';
-                locationRef.current.value = '';
-                phoneRef.current.value = '';
-                emailRef.current.value = '';
+                clearForm();
             } else {
                 const respuestaJson = await respuesta.json();
-                console.error("Error al crear el anuncio", respuestaJson.error);
+                alert("Error al crear el anuncio: " + respuestaJson.error);
             }
         } catch (error) {
-            console.error("Error de red:", error);
+            alert("Error de red: " + error);
         }
     }
 
