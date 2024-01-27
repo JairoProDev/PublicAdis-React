@@ -1,6 +1,8 @@
 #anuncios-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Cambiado a row para organizar los anuncios horizontalmente */
+    flex-wrap: wrap; /* Añadido para permitir que los anuncios se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Añadido para añadir espacio alrededor de los anuncios */
     align-items: flex-start;
     flex-grow: 1;
     background-color: rgba(255, 255, 255, 0.2);

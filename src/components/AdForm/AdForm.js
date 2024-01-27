@@ -4,6 +4,11 @@ import React, { useRef } from 'react';
 function AdForm({ agregarAnuncioAlPrincipio }) {
     const titleRef = useRef();
     const descriptionRef = useRef();
+    const urlRef = useRef();
+    const amountRef = useRef();
+    const locationRef = useRef();
+    const phoneRef = useRef();
+    const emailRef = useRef();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -15,7 +20,11 @@ function AdForm({ agregarAnuncioAlPrincipio }) {
                 },
                 body: JSON.stringify({
                     title: titleRef.current.value,
-                    description: descriptionRef.current.value
+                    description: descriptionRef.current.value,
+                    amount: amountRef.current.value,
+                    location: locationRef.current.value,
+                    phone: phoneRef.current.value,
+                    email: emailRef.current.value
                 })
             });
             if (respuesta.ok) {
@@ -24,8 +33,13 @@ function AdForm({ agregarAnuncioAlPrincipio }) {
                 agregarAnuncioAlPrincipio(anuncio);
                 titleRef.current.value = '';
                 descriptionRef.current.value = '';
+                amountRef.current.value = '';
+                locationRef.current.value = '';
+                phoneRef.current.value = '';
+                emailRef.current.value = '';
             } else {
-                console.error("Error al crear el anuncio");
+                const respuestaJson = await respuesta.json();
+                console.error("Error al crear el anuncio", respuestaJson.error);
             }
         } catch (error) {
             console.error("Error de red:", error);
@@ -41,6 +55,16 @@ function AdForm({ agregarAnuncioAlPrincipio }) {
                     <input type="text" id="title" name="title" required ref={titleRef} />
                     <label htmlFor="description">Descripción:</label>
                     <textarea id="description" name="description" required ref={descriptionRef}></textarea>
+                    <label htmlFor="url">URL de imagen:</label>
+                    <input type="url" id="url" name="url" ref={urlRef} />
+                    <label htmlFor="amount">Precio:</label>
+                    <input type="number" id="amount" name="amount"  ref={amountRef} />
+                    <label htmlFor="location">Ubicación:</label>
+                    <input type="text" id="location" name="location"  ref={locationRef} />
+                    <label htmlFor="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone"  ref={phoneRef} />
+                    <label htmlFor="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email"  ref={emailRef} />
                 </fieldset>
                 <button type="submit">Publicar anuncio</button>
             </form>

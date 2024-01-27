@@ -1,65 +1,105 @@
 .anuncio-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: -20px 20px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 250px;
+    background: #007bff;
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: box-shadow 0.3s ease;
-    max-width: 300px;
-    margin: 10px 0;
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    color: #5c1a55;
+    border-top-left-radius: 20px;
+    cursor: pointer;
+    transform: translateY(10%);
+    transition: transform 0.3s;
+    max-width: 350px;
+    margin: 20px auto;
+    box-shadow: -20px 20px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.anuncio-card::before {
+    content: '';
+    position: absolute;
+    top: -52px;
+    right: -48px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: inset -48px -48px #fff;
 }
 
 .anuncio-card:hover {
-    box-shadow: -20px 20px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .anuncio-card img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .anuncio-titulo {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-weight: 600;
-    /* Añadido para mejorar la legibilidad */
-    line-height: 1.4;
+    font-weight: bold; /* Cambiado a bold para destacar el título */
+    padding-bottom: 10px; /* Reducido el padding para acercar el título a la descripción */
+    font-size: 20px; /* Aumentado el tamaño de la fuente para hacer el título más grande */
+    color: #000000;
 }
 
 .anuncio-descripcion {
-    font-size: 0.9rem;
-    color: #666;
+    color: #312f30;
     flex-grow: 1;
-    /* Añadido para mejorar la legibilidad */
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.anuncio-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.anuncio-price {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.anuncio-location {
+    font-size: 1rem;
+    color: #666;
 }
 
 .anuncio-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.anuncio-buttons button {
+
+.anuncio-buttons a {
+    display: inline-block;
     background-color: #007bff;
     color: #fff;
-    border: none;
-    padding: 6px 12px;
+    text-decoration: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.4s;
-    /* Añadido para mejorar la interactividad */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    margin: 0 5px;
 }
 
-.anuncio-buttons button:hover {
+.anuncio-buttons a:hover {
     background-color: #0056b3;
-    /* Añadido para mejorar la interactividad */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
