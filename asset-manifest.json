@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.42bc8682.css",
-    "main.js": "/static/js/main.12a6a066.js",
-    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
-    "static/media/logo.ico": "/static/media/logo.f0864e2630abbcaed06c.ico",
-    "index.html": "/index.html",
-    "main.42bc8682.css.map": "/static/css/main.42bc8682.css.map",
-    "main.12a6a066.js.map": "/static/js/main.12a6a066.js.map",
-    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
+    "main.css": "/PublicAdis-React/static/css/main.42bc8682.css",
+    "main.js": "/PublicAdis-React/static/js/main.3da71462.js",
+    "static/js/787.d5fa4d18.chunk.js": "/PublicAdis-React/static/js/787.d5fa4d18.chunk.js",
+    "static/media/logo.ico": "/PublicAdis-React/static/media/logo.f0864e2630abbcaed06c.ico",
+    "index.html": "/PublicAdis-React/index.html",
+    "main.42bc8682.css.map": "/PublicAdis-React/static/css/main.42bc8682.css.map",
+    "main.3da71462.js.map": "/PublicAdis-React/static/js/main.3da71462.js.map",
+    "787.d5fa4d18.chunk.js.map": "/PublicAdis-React/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42bc8682.css",
-    "static/js/main.12a6a066.js"
+    "static/js/main.3da71462.js"
   ]
 }
